@@ -1,4 +1,4 @@
-# LDAP Module
+# SimpleTOTP Module
 
 ## Installation
 

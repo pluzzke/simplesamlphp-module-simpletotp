@@ -3,6 +3,7 @@
 namespace SimpleSAML\Module\simpletotp\Auth\Process;
 
 
+use Exception;
 use SimpleSAML\Auth\ProcessingFilter;
 use SimpleSAML\Auth\State;
 use SimpleSAML\Configuration;
@@ -30,7 +31,7 @@ class SimpleTOTP extends ProcessingFilter
     /**
      * Value of the TOTP secret
      */
-    private string $secret_val = NULL;
+    private ?string $secret_val = NULL;
 
     /**
      * Whether or not the user should be forced to use 2fa.
@@ -44,7 +45,7 @@ class SimpleTOTP extends ProcessingFilter
      *  have a TOTP attribute set.  If this attribute is NULL, the user will
      *  be redirect to the internal error page.
      */
-    private string $not_configured_url = NULL;
+    private ?string $not_configured_url = NULL;
 
     /**
      * @param array $config Authproc configuration.
