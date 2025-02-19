@@ -1,0 +1,35 @@
+{% set pagetitle = 'MFA Token'|trans %}
+{% set has_box = true %}
+
+
+{% extends "base.twig" %}
+
+{% block postload %}
+    <script src="{{ asset('js/totp.js', 'simpletotp') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <h2>MFA token</h2>
+    <p>{% trans %}An MFA token is required. If you have none contact your admin.{% endtrans %}</p>
+
+    {% if userError -%}
+        <div class="alert alert-danger" role="alert">
+            <h2>Error</h2>
+            <p>{{ userError }}</p>
+        </div>
+    {%- endif %}
+
+    <form action="{{ formURL }}" id="totpForm">
+        {%- for name, value in formData -%}
+            <input type="hidden" name="{{ name }}" value="{{ value }}"/>
+        {% endfor %}
+        <div class="mb-3">
+            <label for="code">MFA Code:</label>
+            <input autofocus id="code" name="code" class="form-control" autocomplete="off"/>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitButton">
+            {% trans %}Login{% endtrans %}
+        </button>
+    </form>
+
+{% endblock %}

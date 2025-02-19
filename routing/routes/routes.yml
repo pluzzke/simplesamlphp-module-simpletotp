@@ -1,0 +1,8 @@
+---
+
+totp-post:
+  path: /totp-post
+  defaults: {
+    _controller: 'SimpleSAML\Module\simpletotp\Controller\TotpProcessor::process'
+  }
+  methods: [GET]

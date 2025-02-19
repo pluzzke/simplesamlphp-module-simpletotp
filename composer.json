@@ -1,0 +1,37 @@
+{
+    "name": "simplesamlphp/simplesamlphp-module-simpletotp",
+    "description": "A highly configurable yet simple to use TOTP based two-factor authentication processing module for SimpleSAMLphp",
+    "type": "simplesamlphp-module",
+    "keywords": ["simplesamlphp", "otp"],
+    "config": {
+        "preferred-install": {
+            "simplesamlphp/simplesamlphp": "source",
+            "*": "dist"
+        },
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "simplesamlphp/composer-module-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true,
+            "simplesamlphp/composer-xmlprovider-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleSAML\\Module\\simpletotp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SimpleSAML\\Test\\Utils\\": "vendor/simplesamlphp/simplesamlphp/tests/Utils"
+        }
+    },
+    "require-dev": {
+        "simplesamlphp/simplesamlphp-test-framework": "^1.7.10"
+    },
+    "require": {
+        "php": "^8.1",
+        "simplesamlphp/composer-module-installer": "~1.0",
+        "pragmarx/google2fa": "^8.0"
+    }
+}
