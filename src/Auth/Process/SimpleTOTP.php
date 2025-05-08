@@ -3,7 +3,6 @@
 namespace SimpleSAML\Module\simpletotp\Auth\Process;
 
 
-use Exception;
 use SimpleSAML\Auth\ProcessingFilter;
 use SimpleSAML\Auth\State;
 use SimpleSAML\Configuration;
